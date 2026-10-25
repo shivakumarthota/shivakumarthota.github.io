@@ -9,4 +9,3 @@ Static one-page site. No build step.
 4. The site is live at `https://<github-username>.github.io/` in a minute or two.
 
 To update the resume, replace the PDF with a new file of the same name.
-# shivakumarthota.github.io
