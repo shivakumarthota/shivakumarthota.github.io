@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shivakumar Thota · AI QA Lead</title>
+<meta name="description" content="Shivakumar Thota, AI QA Lead in Atlanta. GenAI, LLM, RAG and Agentic AI testing, AI test strategy and AI quality engineering.">
+<meta property="og:title" content="Shivakumar Thota · AI QA Lead">
+<meta property="og:image" content="assets/shiva.jpg">
+<meta property="og:description" content="GenAI, LLM, RAG and Agentic AI Testing · AI Quality Engineering">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23120f1c'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-weight='700' font-size='26' fill='%23ffb547'%3EST%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c0a14; --bg2:#110e1b; --card:#17142249; --card-solid:#171422; --line:#2a2538;
+  --text:#eeebf6; --muted:#a29db5; --dim:#6f6a84;
+  --amber:#ffb547; --amber-soft:#ffb5471f; --violet:#a78bfa; --violet-soft:#a78bfa1f;
+  --ok:#4ade80; --bad:#fb7185; --warn:#fbbf24;
+  --grad:linear-gradient(120deg,#ffb547 0%,#f472b6 50%,#a78bfa 100%);
+  --radius:14px; --side:330px;
+  --shadow:0 20px 60px -30px #000;
+}
+:root[data-theme="light"]{
+  --bg:#f7f5fb; --bg2:#efecf6; --card:#ffffffcc; --card-solid:#ffffff; --line:#e1dcec;
+  --text:#1b1626; --muted:#5b5570; --dim:#8b85a0;
+  --amber:#c27a00; --amber-soft:#c27a0014; --violet:#6d4fd8; --violet-soft:#6d4fd814;
+  --ok:#15803d; --bad:#be123c; --warn:#b45309;
+  --grad:linear-gradient(120deg,#c27a00 0%,#db2777 50%,#6d4fd8 100%);
+  --shadow:0 20px 50px -30px #6d4fd855;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{background:var(--bg);color:var(--text);font:400 16px/1.65 "Space Grotesk",system-ui,sans-serif;-webkit-font-smoothing:antialiased;transition:background .3s,color .3s}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--amber);color:#111}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.serif{font-family:Fraunces,Georgia,serif;font-style:italic;font-weight:400}
+
+/* background texture */
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;
+  background:
+   radial-gradient(600px 400px at 85% -5%,var(--violet-soft),transparent 70%),
+   radial-gradient(500px 380px at 30% 110%,var(--amber-soft),transparent 70%),
+   radial-gradient(circle at 1px 1px,var(--line) 1px,transparent 0) 0 0/28px 28px;}
+
+/* ---------- layout ---------- */
+.shell{display:grid;grid-template-columns:var(--side) 1fr;min-height:100vh}
+aside{position:sticky;top:0;height:100vh;padding:40px 30px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:26px;background:linear-gradient(180deg,var(--bg2),transparent)}
+main{padding:0 clamp(20px,5vw,72px) 60px;max-width:1080px;width:100%}
+
+/* sidebar */
+.avatar{width:132px;height:132px;border-radius:28px;position:relative;background:var(--card-solid)}
+.avatar img{width:100%;height:100%;object-fit:cover;border-radius:28px;display:block;position:relative;z-index:1}
+.hero-photo{display:none}
+.avatar span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.avatar::after{content:"";position:absolute;inset:-5px;border-radius:32px;padding:2px;background:var(--grad);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.75;animation:spin 8s linear infinite}
+.status{position:absolute;right:-5px;bottom:-5px;width:20px;height:20px;border-radius:50%;background:var(--ok);border:3px solid var(--bg);z-index:2}
+.side-name{font-size:28px;font-weight:700;line-height:1.1;letter-spacing:-.5px}
+.side-role{margin-top:8px;color:var(--amber);font-size:14px;min-height:1.6em}
+.side-role .caret{display:inline-block;width:8px;height:1em;background:var(--amber);vertical-align:-2px;margin-left:2px;animation:blink 1s steps(1) infinite}
+.side-loc{margin-top:6px;color:var(--muted);font-size:14px;display:flex;align-items:center;gap:6px}
+nav.side-nav{display:flex;flex-direction:column;gap:2px}
+.side-nav a{display:flex;align-items:center;gap:12px;padding:8px 10px;border-radius:10px;color:var(--muted);font-size:14.5px;transition:.2s}
+.side-nav a .n{font:500 11px "IBM Plex Mono";color:var(--dim);width:20px}
+.side-nav a .bar{height:1px;width:16px;background:var(--dim);transition:.25s}
+.side-nav a:hover{color:var(--text)}
+.side-nav a.active{color:var(--text);background:var(--violet-soft)}
+.side-nav a.active .bar{width:34px;background:var(--amber)}
+.side-nav a.active .n{color:var(--amber)}
+.side-foot{margin-top:auto;display:flex;flex-direction:column;gap:14px}
+.icons{display:flex;gap:10px}
+.icon-btn{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;border:1px solid var(--line);background:var(--card-solid);color:var(--muted);cursor:pointer;transition:.2s}
+.icon-btn:hover{color:var(--amber);border-color:var(--amber);transform:translateY(-2px)}
+.icon-btn svg{width:18px;height:18px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:11px 18px;border-radius:11px;font:600 14.5px "Space Grotesk";border:1px solid transparent;cursor:pointer;transition:.2s}
+.btn svg{width:17px;height:17px}
+.btn-primary{background:var(--amber);color:#1a1205}
+.btn-primary:hover{filter:brightness(1.08);transform:translateY(-2px);box-shadow:0 10px 30px -10px var(--amber)}
+.btn-ghost{border-color:var(--line);color:var(--text);background:var(--card-solid)}
+.btn-ghost:hover{border-color:var(--violet);color:var(--violet)}
+
+/* mobile top bar */
+.topbar,.mnav{display:none}
+
+/* ---------- sections ---------- */
+section{padding:84px 0 20px}
+.eyebrow{font:500 12.5px "IBM Plex Mono";color:var(--amber);letter-spacing:.14em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--amber)}
+h2{font-size:clamp(30px,4vw,42px);line-height:1.1;letter-spacing:-1px;margin:12px 0 30px;font-weight:700}
+h2 .serif{color:var(--violet)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);backdrop-filter:blur(6px);box-shadow:var(--shadow)}
+
+/* hero */
+.hero{padding-top:64px;display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center}
+.hello{font:500 14px "IBM Plex Mono";color:var(--muted)}
+.hero h1{font-size:clamp(40px,5.6vw,68px);line-height:1.02;letter-spacing:-2px;margin:10px 0 14px;font-weight:700}
+.hero h1 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lead-serif{font-size:clamp(20px,2.2vw,26px);color:var(--violet);line-height:1.3}
+.hero p.intro{color:var(--muted);margin:18px 0 26px;max-width:520px}
+.hero p.intro b{color:var(--text);font-weight:600}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+
+/* eval console */
+.console{overflow:hidden;font:400 12.8px/1.75 "IBM Plex Mono";min-height:360px}
+.console-top{display:flex;align-items:center;gap:7px;padding:12px 16px;border-bottom:1px solid var(--line)}
+.console-top i{width:11px;height:11px;border-radius:50%;background:#ff5f57}
+.console-top i:nth-child(2){background:#febc2e}.console-top i:nth-child(3){background:#28c840}
+.console-top span{margin-left:10px;color:var(--dim);font-size:12px}
+.console-body{padding:16px 18px}
+.console .ln{white-space:pre-wrap;opacity:0;transform:translateY(4px);transition:.35s}
+.console .ln.on{opacity:1;transform:none}
+.c-dim{color:var(--dim)}.c-ok{color:var(--ok)}.c-bad{color:var(--bad)}.c-am{color:var(--amber)}.c-vi{color:var(--violet)}
+.console-note{padding:0 18px 14px;color:var(--dim);font-size:11px}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:46px}
+.stat{padding:20px 18px}
+.stat .num{font-size:38px;font-weight:700;letter-spacing:-1px;line-height:1}
+.stat .num em{font-style:normal;color:var(--amber)}
+.stat .lbl{margin-top:8px;color:var(--muted);font-size:13px;line-height:1.4}
+
+/* about */
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:28px}
+.about p{color:var(--muted);margin-bottom:14px}
+.about p b{color:var(--text);font-weight:600}
+.edu{padding:22px}
+.edu h3{font:500 12px "IBM Plex Mono";letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:14px}
+.edu-item{padding:12px 0;border-top:1px dashed var(--line)}
+.edu-item:first-of-type{border-top:0;padding-top:0}
+.edu-item b{display:block;font-weight:600}
+.edu-item span{color:var(--muted);font-size:14px}
+.edu-item .yr{float:right;font:500 12px "IBM Plex Mono";color:var(--amber)}
+
+/* focus cards */
+.focus{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.fcard{padding:24px;position:relative;overflow:hidden;transition:.25s}
+.fcard:hover{transform:translateY(-4px);border-color:var(--violet)}
+.fcard .ico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--violet-soft);color:var(--violet);margin-bottom:16px}
+.fcard:nth-child(even) .ico{background:var(--amber-soft);color:var(--amber)}
+.fcard .ico svg{width:22px;height:22px}
+.fcard h3{font-size:18px;margin-bottom:6px}
+.fcard p{color:var(--muted);font-size:14.5px;margin-bottom:14px}
+.checks{list-style:none;display:flex;flex-direction:column;gap:6px}
+.checks li{font-size:13.5px;color:var(--text);display:flex;gap:9px;align-items:flex-start}
+.checks li::before{content:"";flex:none;width:15px;height:15px;margin-top:4px;border-radius:4px;background:var(--ok);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/contain no-repeat}
+
+/* lifecycle */
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:22px;counter-reset:s}
+.step{padding:18px 16px;border:1px solid var(--line);border-left:0;position:relative;background:var(--card)}
+.step:first-child{border-left:1px solid var(--line);border-radius:var(--radius) 0 0 var(--radius)}
+.step:last-child{border-radius:0 var(--radius) var(--radius) 0}
+.step::before{counter-increment:s;content:"0" counter(s);font:500 12px "IBM Plex Mono";color:var(--amber)}
+.step b{display:block;margin:6px 0 4px;font-size:15px}
+.step span{color:var(--muted);font-size:13px;line-height:1.45;display:block}
+
+/* experience */
+.job{padding:30px;margin-bottom:22px}
+.job-head{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:baseline}
+.job-head h3{font-size:22px;letter-spacing:-.3px}
+.when{font:500 12.5px "IBM Plex Mono";color:var(--amber);background:var(--amber-soft);padding:4px 10px;border-radius:999px;white-space:nowrap}
+.org{color:var(--violet);font-weight:500;margin-top:4px}
+.job-intro{color:var(--muted);margin:14px 0 20px}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px}
+.tab{font:500 13px "Space Grotesk";padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;transition:.2s}
+.tab:hover{color:var(--text)}
+.tab[aria-selected="true"]{background:var(--violet);border-color:var(--violet);color:#fff}
+:root[data-theme="light"] .tab[aria-selected="true"]{color:#fff}
+.panel ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.panel li{position:relative;padding-left:22px;color:var(--muted);font-size:15px}
+.panel li::before{content:"";position:absolute;left:2px;top:10px;width:8px;height:8px;border-radius:2px;background:var(--amber);transform:rotate(45deg)}
+.panel li b{color:var(--text);font-weight:600}
+.panel[hidden]{display:none}
+.no-js .panel[hidden]{display:block}
+.no-js .tabs{display:none}
+.no-js .panel+.panel{margin-top:16px}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:22px;padding-top:18px;border-top:1px dashed var(--line)}
+.tag{font:500 12px "IBM Plex Mono";padding:5px 10px;border-radius:7px;background:var(--bg2);border:1px solid var(--line);color:var(--muted)}
+.tag.hot{color:var(--amber);border-color:color-mix(in srgb,var(--amber) 40%,transparent)}
+.job.small .panel li{font-size:14.5px}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.sblock{padding:22px}
+.sblock h3{font-size:16px;display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.sblock h3 .dot{width:9px;height:9px;border-radius:3px;background:var(--amber)}
+.sblock.ai h3 .dot{background:var(--violet)}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{font-size:13px;padding:6px 11px;border-radius:8px;border:1px solid var(--line);background:var(--bg2);color:var(--text);transition:.2s}
+.chip:hover{border-color:var(--amber);color:var(--amber)}
+.sblock.ai .chip:hover{border-color:var(--violet);color:var(--violet)}
+
+/* certs */
+.certs{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.cert{padding:20px;transition:.25s}
+.cert:hover{transform:translateY(-3px);border-color:var(--amber)}
+.cert .code{font:600 22px "IBM Plex Mono";background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.cert b{display:block;font-size:14.5px;margin-top:8px;line-height:1.35}
+.cert span{display:block;margin-top:8px;font:500 11.5px "IBM Plex Mono";color:var(--dim);text-transform:uppercase;letter-spacing:.08em}
+
+/* contact */
+.contact{padding:44px;text-align:center;position:relative;overflow:hidden}
+.contact::before{content:"";position:absolute;inset:0;background:radial-gradient(500px 220px at 50% 0%,var(--violet-soft),transparent 70%);pointer-events:none}
+.contact h2{margin-bottom:12px}
+.contact p{color:var(--muted);max-width:560px;margin:0 auto 28px}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:820px;margin:0 auto 26px;text-align:left}
+.cbox{display:flex;gap:12px;align-items:center;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--bg2);transition:.2s;min-width:0}
+.cbox:hover{border-color:var(--amber)}
+.cbox svg{width:20px;height:20px;color:var(--amber);flex:none}
+.cbox small{display:block;font:500 11px "IBM Plex Mono";color:var(--dim);text-transform:uppercase;letter-spacing:.1em}
+.cbox span{display:block;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+footer{margin-top:50px;padding-top:22px;border-top:1px solid var(--line);color:var(--dim);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+/* reveal */
+.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.js .reveal.in{opacity:1;transform:none}
+
+@keyframes spin{to{filter:hue-rotate(360deg)}}
+@keyframes blink{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .js .reveal{opacity:1;transform:none}
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:1180px){
+  .hero{grid-template-columns:1fr}
+  .focus{grid-template-columns:repeat(2,1fr)}
+  .certs{grid-template-columns:repeat(2,1fr)}
+  .flow{grid-template-columns:1fr}
+  .step,.step:first-child,.step:last-child{border:1px solid var(--line);border-top:0;border-radius:0}
+  .step:first-child{border-top:1px solid var(--line);border-radius:var(--radius) var(--radius) 0 0}
+  .step:last-child{border-radius:0 0 var(--radius) var(--radius)}
+}
+@media (max-width:900px){
+  .shell{display:block}
+  aside{display:none}
+  .topbar{display:flex;position:sticky;top:0;z-index:20;align-items:center;justify-content:space-between;padding:12px 16px;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .topbar .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+  .topbar .mini{width:34px;height:34px;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+  .topbar .mini img{width:100%;height:100%;object-fit:cover;display:block}
+  .hero-photo{display:block;width:112px;height:112px;margin-bottom:20px;border-radius:26px;padding:3px;background:var(--grad)}
+  .hero-photo img{width:100%;height:100%;object-fit:cover;border-radius:23px;display:block}
+  .topbar .mini span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .mnav{position:fixed;inset:59px 0 auto 0;z-index:19;background:var(--bg);border-bottom:1px solid var(--line);padding:10px 16px 18px;display:none;flex-direction:column}
+  .mnav.open{display:flex}
+  .mnav a{padding:11px 4px;border-bottom:1px solid var(--line);color:var(--muted)}
+  main{padding:0 16px 40px}
+  section{padding-top:64px}
+  .hero{padding-top:36px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .about,.skills{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .contact{padding:30px 18px}
+  .job{padding:22px 18px}
+}
+@media (max-width:560px){
+  .focus,.certs{grid-template-columns:1fr}
+  .console{font-size:11.5px}
+}
+</style>
+</head>
+<body class="no-js">
+<script>
+  document.body.classList.remove('no-js');document.documentElement.classList.add('js');
+  try{var t=localStorage.getItem('st-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}
+</script>
+
+<!-- SVG icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-in" viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6h.1c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.5H3.5V9h3.6v11.5zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></symbol>
+  <symbol id="i-docs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><circle cx="11.5" cy="14.5" r="2.5"/><path d="m13.3 16.3 2.2 2.2"/></symbol>
+  <symbol id="i-agent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V4"/><circle cx="12" cy="3" r="1"/><circle cx="9" cy="14" r="1"/><circle cx="15" cy="14" r="1"/><path d="M2 13v2M22 13v2"/></symbol>
+  <symbol id="i-loop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></symbol>
+  <symbol id="i-api" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 6-6 6 6 6"/><path d="m16 6 6 6-6 6"/><path d="m14 4-4 16"/></symbol>
+  <symbol id="i-lead" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><path d="M16 3.1a4 4 0 0 1 0 7.8M21 21v-2a4 4 0 0 0-3-3.9"/></symbol>
+</svg>
+
+<!-- mobile top bar -->
+<header class="topbar">
+  <a href="#home" class="brand"><span class="mini"><picture><source srcset="assets/shiva.webp" type="image/webp"><img src="assets/shiva.jpg" alt="Shivakumar Thota" width="480" height="480" loading="lazy"></picture></span> Shivakumar Thota</a>
+  <div class="icons">
+    <button class="icon-btn theme-toggle" aria-label="Toggle light and dark theme"><svg><use href="#i-sun"/></svg></button>
+    <button class="icon-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><svg><use href="#i-menu"/></svg></button>
+  </div>
+</header>
+<nav class="mnav" id="mnav" aria-label="Mobile">
+  <a href="#home">Home</a><a href="#about">About</a><a href="#focus">AI Testing</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#certifications">Certifications</a><a href="#contact">Contact</a>
+</nav>
+
+<div class="shell">
+  <!-- ===== sidebar ===== -->
+  <aside>
+    <div>
+      <div class="avatar"><picture><source srcset="assets/shiva.webp" type="image/webp"><img src="assets/shiva.jpg" alt="Shivakumar Thota" width="480" height="480"></picture><i class="status" title="Open to AI QA Lead roles"></i></div>
+    </div>
+    <div>
+      <div class="side-name">Shivakumar<br>Thota</div>
+      <div class="side-role mono"><span class="typed" data-roles="AI QA Lead|GenAI QA Lead|AI Test Lead|AI Quality Engineering Lead">AI QA Lead</span><span class="caret"></span></div>
+      <div class="side-loc"><svg width="15" height="15"><use href="#i-pin"/></svg> Atlanta, GA</div>
+    </div>
+    <nav class="side-nav" aria-label="Sections">
+      <a href="#home"><span class="n">01</span><span class="bar"></span>Home</a>
+      <a href="#about"><span class="n">02</span><span class="bar"></span>About</a>
+      <a href="#focus"><span class="n">03</span><span class="bar"></span>AI Testing</a>
+      <a href="#experience"><span class="n">04</span><span class="bar"></span>Experience</a>
+      <a href="#skills"><span class="n">05</span><span class="bar"></span>Skills</a>
+      <a href="#certifications"><span class="n">06</span><span class="bar"></span>Certifications</a>
+      <a href="#contact"><span class="n">07</span><span class="bar"></span>Contact</a>
+    </nav>
+    <div class="side-foot">
+      <a class="btn btn-primary" href="Shivakumar_Thota_AI_QA_Lead_Resume.pdf" download><svg><use href="#i-down"/></svg> Download Resume</a>
+      <div class="icons">
+        <a class="icon-btn" href="mailto:Thota.shiva92@gmail.com" aria-label="Email"><svg><use href="#i-mail"/></svg></a>
+        <a class="icon-btn" href="https://www.linkedin.com/in/shivakumar-thota-098516159/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#i-in"/></svg></a>
+        <a class="icon-btn" href="tel:+16034179567" aria-label="Phone"><svg><use href="#i-phone"/></svg></a>
+        <button class="icon-btn theme-toggle" aria-label="Toggle light and dark theme"><svg><use href="#i-sun"/></svg></button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ===== main ===== -->
+  <main>
+    <!-- HERO -->
+    <section id="home">
+      <div class="hero">
+        <div class="reveal">
+          <div class="hero-photo"><picture><source srcset="assets/shiva.webp" type="image/webp"><img src="assets/shiva.jpg" alt="Shivakumar Thota" width="480" height="480" loading="lazy"></picture></div>
+          <div class="hello">// hello, I'm</div>
+          <h1>Shivakumar <span class="grad">Thota</span></h1>
+          <div class="lead-serif serif">AI QA Lead · GenAI, LLM, RAG &amp; Agentic AI Testing</div>
+          <p class="intro">I make sure AI applications give answers people can trust. <b>12+ years</b> in quality engineering and test automation, now leading <b>AI quality engineering</b> at <b>Mohawk Industries</b> for LLM applications built on <b>Claude</b> and <b>OpenAI</b> models, RAG knowledge search and AI agents.</p>
+          <div class="cta">
+            <a class="btn btn-primary" href="#contact"><svg><use href="#i-mail"/></svg> Get in Touch</a>
+            <a class="btn btn-ghost" href="#experience"><svg><use href="#i-arrow"/></svg> View Experience</a>
+          </div>
+        </div>
+
+        <div class="card console reveal" aria-label="Example AI evaluation run">
+          <div class="console-top"><i></i><i></i><i></i><span>ai-quality-run.log</span></div>
+          <div class="console-body" id="console">
+            <div class="ln"><span class="c-am">$</span> run ai-regression --suite knowledge_assistant</div>
+            <div class="ln c-dim">loading 4 scenarios · model: claude / gpt</div>
+            <div class="ln"><span class="c-vi">▸ rag_014</span>  product warranty question</div>
+            <div class="ln">  retrieval <span class="c-ok">✓</span>  grounded <span class="c-ok">✓</span>  citation <span class="c-ok">✓</span>  <span class="c-ok">PASS</span></div>
+            <div class="ln"><span class="c-vi">▸ llm_027</span>  out-of-scope question</div>
+            <div class="ln">  declined politely <span class="c-ok">✓</span>  no hallucination <span class="c-ok">✓</span>  <span class="c-ok">PASS</span></div>
+            <div class="ln"><span class="c-vi">▸ rag_031</span>  conflicting source documents</div>
+            <div class="ln">  conflict flagged <span class="c-bad">✗</span>  <span class="c-bad">FAIL</span> <span class="c-dim">→ defect triaged</span></div>
+            <div class="ln"><span class="c-vi">▸ agent_06</span>  order status, multi-step</div>
+            <div class="ln">  tool choice <span class="c-ok">✓</span>  retry on timeout <span class="c-ok">✓</span>  JSON <span class="c-ok">✓</span>  <span class="c-ok">PASS</span></div>
+            <div class="ln c-dim">─────────────────────────────────</div>
+            <div class="ln">3 passed · <span class="c-bad">1 defect</span> · release check: <span class="c-am">hold</span></div>
+          </div>
+          <div class="console-note">Illustration of the kind of checks I run, not real project data.</div>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="card stat reveal"><div class="num" data-count="12">12<em>+</em></div><div class="lbl">Years in QA &amp; quality engineering</div></div>
+        <div class="card stat reveal"><div class="num" data-count="6">6<em>+</em></div><div class="lbl">Years as QA Lead at Mohawk Industries</div></div>
+        <div class="card stat reveal"><div class="num" data-count="8">8</div><div class="lbl">Tricentis &amp; SAP automation certifications</div></div>
+        <div class="card stat reveal"><div class="num">3</div><div class="lbl">AI focus areas: LLM · RAG · Agentic AI</div></div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="eyebrow">About</div>
+      <h2>From test automation to <span class="serif">AI quality</span></h2>
+      <div class="about">
+        <div class="reveal">
+          <p>I started my career writing <b>Selenium and Java</b> automation and testing <b>REST and SOAP APIs</b>. That work taught me to think about data flows, edge cases and regression risk, which turned out to be exactly what AI applications need.</p>
+          <p>At <b>Mohawk Industries</b> I grew from enterprise testing on SAP C4C, Salesforce and SAP Commerce into leading QA for <b>GenAI and LLM applications</b>. Today I define the <b>AI test strategy</b>, test prompts and responses, validate <b>RAG retrieval and grounding</b>, and check that <b>AI agents</b> pick the right tools and recover from failures.</p>
+          <p>AI output is not deterministic, so I test for quality, not exact text. I look at accuracy, groundedness, context use, instruction following and business rules, and I compare results across prompt, model and knowledge base changes before anything goes to production.</p>
+        </div>
+        <div class="card edu reveal">
+          <h3>Education</h3>
+          <div class="edu-item"><span class="yr">2018</span><b>Master's in Computer Science</b><span>Rivier University, Nashua, NH, USA</span></div>
+          <div class="edu-item"><span class="yr">2013</span><b>Bachelor's in Computer Science</b><span>Jawaharlal Nehru Technological University, Hyderabad, India</span></div>
+          <h3 style="margin-top:22px">Currently</h3>
+          <div class="edu-item"><b>QA Lead · Mohawk Industries</b><span>AI QA leadership for Claude and OpenAI based applications</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI TESTING FOCUS -->
+    <section id="focus">
+      <div class="eyebrow">AI Testing</div>
+      <h2>What I test in <span class="serif">AI systems</span></h2>
+      <div class="focus">
+        <article class="card fcard reveal">
+          <div class="ico"><svg><use href="#i-chat"/></svg></div>
+          <h3>LLM &amp; Prompt Testing</h3>
+          <p>Prompt test sets covering normal, negative, ambiguous and edge-case inputs.</p>
+          <ul class="checks"><li>Accuracy, relevance and completeness</li><li>Instruction following and response format</li><li>Hallucination and out-of-scope handling</li></ul>
+        </article>
+        <article class="card fcard reveal">
+          <div class="ico"><svg><use href="#i-docs"/></svg></div>
+          <h3>RAG Validation</h3>
+          <p>Checks that answers come from the right documents and say only what the sources support.</p>
+          <ul class="checks"><li>Document ingestion and retrieved chunks</li><li>Context relevance and source grounding</li><li>Citation accuracy and conflicting sources</li></ul>
+        </article>
+        <article class="card fcard reveal">
+          <div class="ico"><svg><use href="#i-agent"/></svg></div>
+          <h3>Agentic AI Testing</h3>
+          <p>Multi-step agent workflows tested from the first tool call to the final answer.</p>
+          <ul class="checks"><li>Tool selection and API invocation</li><li>State, context retention and handoffs</li><li>Timeouts, retries and incomplete runs</li></ul>
+        </article>
+        <article class="card fcard reveal">
+          <div class="ico"><svg><use href="#i-loop"/></svg></div>
+          <h3>AI Regression</h3>
+          <p>Quality compared across releases using defined criteria instead of exact-text matching.</p>
+          <ul class="checks"><li>Prompt and model changes</li><li>Configuration and retrieval changes</li><li>Knowledge base updates</li></ul>
+        </article>
+        <article class="card fcard reveal">
+          <div class="ico"><svg><use href="#i-api"/></svg></div>
+          <h3>AI API &amp; Integration</h3>
+          <p>AI services tested as part of the wider enterprise system they feed.</p>
+          <ul class="checks"><li>Request and response payloads</li><li>JSON structure and error handling</li><li>Data flow into connected systems</li></ul>
+        </article>
+        <article class="card fcard reveal">
+          <div class="ico"><svg><use href="#i-lead"/></svg></div>
+          <h3>AI QA Leadership</h3>
+          <p>Test strategy, planning and release decisions for AI projects.</p>
+          <ul class="checks"><li>AI test strategy and quality standards</li><li>Defect triage and risk reporting</li><li>Mentoring QA engineers on AI testing</li></ul>
+        </article>
+      </div>
+
+      <div class="flow reveal" aria-label="AI testing approach">
+        <div class="step"><b>Review</b><span>AI requirements and quality risks early</span></div>
+        <div class="step"><b>Design</b><span>Prompt sets, datasets and expected quality</span></div>
+        <div class="step"><b>Evaluate</b><span>Responses, retrieval and agent behavior</span></div>
+        <div class="step"><b>Automate</b><span>Dataset-driven API checks in CI/CD</span></div>
+        <div class="step"><b>Release</b><span>Readiness, risks and sign-off</span></div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="eyebrow">Experience</div>
+      <h2>Where I've <span class="serif">built quality</span></h2>
+
+      <article class="card job reveal">
+        <div class="job-head">
+          <h3>QA Lead · AI Quality Engineering</h3>
+          <span class="when">Jul 2020 to Present</span>
+        </div>
+        <div class="org">Mohawk Industries · Calhoun, GA</div>
+        <p class="job-intro">Leads quality engineering for AI-enabled enterprise applications built on Claude and OpenAI models, including GenAI assistants, RAG-based knowledge search and AI agent workflows that support business users.</p>
+
+        <div class="tabs" role="tablist" aria-label="Mohawk focus areas">
+          <button class="tab" role="tab" aria-selected="true" aria-controls="p1" id="t1">AI QA Leadership</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="p2" id="t2">GenAI, LLM &amp; RAG</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="p3" id="t3">Agents &amp; APIs</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="p4" id="t4">Regression &amp; Automation</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="p5" id="t5">Enterprise Testing</button>
+        </div>
+
+        <div class="panel" role="tabpanel" id="p1" aria-labelledby="t1">
+          <ul>
+            <li>Own the <b>test strategy, quality standards and release criteria</b> for AI-enabled enterprise applications, including GenAI and LLM-based solutions.</li>
+            <li>Review AI requirements and solution designs with product owners and architects to raise risks such as <b>hallucination, missing context</b> and unclear expected behavior early.</li>
+            <li>Plan AI testing across functional, API, integration, regression and end-to-end levels, covering estimation, sprint planning and work allocation.</li>
+            <li>Run <b>defect triage for AI issues</b> with developers and AI engineers, separating prompt, retrieval, model and application defects so each reaches the right owner.</li>
+            <li>Report test coverage, quality metrics, open risks and <b>release readiness</b> to project leads and business stakeholders.</li>
+            <li>Mentor QA engineers on AI testing methods, including prompt design, response evaluation and handling non-deterministic outputs.</li>
+          </ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p2" aria-labelledby="t2" hidden>
+          <ul>
+            <li>Designed <b>prompt test sets</b> covering normal, negative, ambiguous and edge-case inputs, widening AI test coverage beyond expected-path scenarios.</li>
+            <li>Compare and evaluate <b>Claude and OpenAI model responses</b> for accuracy, relevance, completeness, consistency, instruction following, business rules and response format, including JSON outputs.</li>
+            <li>Test <b>hallucination and out-of-scope</b> scenarios to confirm the application declines or flags questions it cannot answer from its data.</li>
+            <li>Validate <b>RAG workflows</b> by checking document ingestion, retrieved chunks, context relevance, source grounding and final answer accuracy.</li>
+            <li>Test retrieval against query variations, missing context and conflicting information, and confirm that <b>citations point to the correct documents</b>.</li>
+          </ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p3" aria-labelledby="t3" hidden>
+          <ul>
+            <li>Validate <b>AI agent workflows</b> across multi-step business processes, covering tool selection, API calls, context retention, state handling and the final output.</li>
+            <li>Test agent failure paths such as <b>incorrect tool selection</b>, incomplete execution, timeouts, retry logic and handoffs to human reviewers.</li>
+            <li>Test <b>AI service APIs</b> and integrations, checking payloads, authentication, JSON structure, error handling and data flow into connected enterprise systems.</li>
+          </ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p4" aria-labelledby="t4" hidden>
+          <ul>
+            <li>Created repeatable <b>AI regression scenarios</b> that compare response quality after prompt, model, configuration, knowledge base and retrieval changes.</li>
+            <li>Automated AI checks through <b>dataset-driven API tests</b> and reusable response validations, built on the Java and API automation framework and run in CI/CD.</li>
+            <li>Identified <b>hallucination, grounding and context-handling defects</b> before production releases and worked with engineering to analyze inconsistent LLM responses.</li>
+          </ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p5" aria-labelledby="t5" hidden>
+          <ul>
+            <li>Built and maintained <b>TOSCA automation suites</b> for sanity, minimal and full regression across SAP C4C, Salesforce and SAP Commerce (Hybris).</li>
+            <li>Covered Accounts, Contacts, Leads, Opportunities, Sales Quotes and Sales Orders, and validated data flow with <b>Mainframe (CAMS) and ESB</b> integrations.</li>
+            <li>Managed execution in qTest, defects in Jira and scheduled regression runs in Bamboo.</li>
+          </ul>
+        </div>
+
+        <div class="tags">
+          <span class="tag hot">Claude</span><span class="tag hot">OpenAI GPT</span><span class="tag hot">RAG</span><span class="tag hot">AI Agents</span><span class="tag hot">Prompt Testing</span>
+          <span class="tag">REST APIs</span><span class="tag">Postman</span><span class="tag">TOSCA</span><span class="tag">SAP C4C</span><span class="tag">Salesforce</span><span class="tag">SAP Commerce</span><span class="tag">Jira</span><span class="tag">qTest</span><span class="tag">Bamboo</span>
+        </div>
+      </article>
+
+      <article class="card job small reveal">
+        <div class="job-head">
+          <h3>QA Automation Engineer</h3>
+          <span class="when">Apr 2018 to Jun 2020</span>
+        </div>
+        <div class="org">World Fuel Services Corporation · Miami, FL <span class="c-dim">(through Collaborate Solutions, Inc.)</span></div>
+        <div class="panel" style="margin-top:16px">
+          <ul>
+            <li>Designed and maintained <b>Selenium WebDriver automation in Java</b> using the Page Object Model, with data-driven, keyword-driven and hybrid components.</li>
+            <li>Wrote BDD scenarios in <b>Cucumber (Gherkin)</b>, with execution and reporting through TestNG and Maven.</li>
+            <li>Tested <b>SOAP and REST web services</b> with Postman, SoapUI and Swagger, adding assertions on request and response payloads.</li>
+            <li>Ran automated regression on each build through <b>Jenkins</b>, with GitHub for source control, and wrote SQL for test data and backend checks.</li>
+            <li>Performed functional, integration, regression and cross-browser testing, including parallel runs on Selenium Grid.</li>
+          </ul>
+        </div>
+        <div class="tags">
+          <span class="tag">Selenium</span><span class="tag">Java</span><span class="tag">Cucumber</span><span class="tag">TestNG</span><span class="tag">Maven</span><span class="tag">Postman</span><span class="tag">SoapUI</span><span class="tag">Swagger</span><span class="tag">Jenkins</span><span class="tag">GitHub</span><span class="tag">SQL</span>
+        </div>
+      </article>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="eyebrow">Skills</div>
+      <h2>AI first, backed by <span class="serif">solid automation</span></h2>
+      <div class="skills">
+        <div class="card sblock ai reveal"><h3><span class="dot"></span>AI &amp; GenAI Testing</h3><div class="chips">
+          <span class="chip">GenAI Testing</span><span class="chip">LLM Testing</span><span class="chip">Prompt Testing</span><span class="chip">AI Response Evaluation</span><span class="chip">Hallucination Testing</span><span class="chip">Groundedness Testing</span><span class="chip">Context Validation</span><span class="chip">JSON Output Validation</span></div></div>
+        <div class="card sblock ai reveal"><h3><span class="dot"></span>RAG Testing</h3><div class="chips">
+          <span class="chip">Retrieval Validation</span><span class="chip">Document Ingestion</span><span class="chip">Retrieval Accuracy</span><span class="chip">Context Relevance</span><span class="chip">Source Grounding</span><span class="chip">Citation Validation</span><span class="chip">Semantic Search</span></div></div>
+        <div class="card sblock ai reveal"><h3><span class="dot"></span>Agentic AI Testing</h3><div class="chips">
+          <span class="chip">AI Agent Testing</span><span class="chip">Multi-Agent Workflows</span><span class="chip">Tool Calling Validation</span><span class="chip">Agent Decisions</span><span class="chip">State &amp; Context</span><span class="chip">Human-in-the-Loop</span><span class="chip">Failure &amp; Retry</span></div></div>
+        <div class="card sblock ai reveal"><h3><span class="dot"></span>LLMs &amp; AI Quality Engineering</h3><div class="chips">
+          <span class="chip">Claude (Anthropic)</span><span class="chip">OpenAI GPT Models</span><span class="chip">LLM APIs</span><span class="chip">Vector Search</span><span class="chip">AI Test Strategy</span><span class="chip">Risk-Based Testing</span><span class="chip">AI Regression</span><span class="chip">End-to-End AI Validation</span></div></div>
+        <div class="card sblock reveal"><h3><span class="dot"></span>API &amp; Automation</h3><div class="chips">
+          <span class="chip">REST API Testing</span><span class="chip">Postman</span><span class="chip">SoapUI</span><span class="chip">Swagger</span><span class="chip">Selenium WebDriver</span><span class="chip">TOSCA</span><span class="chip">Java</span><span class="chip">Cucumber</span><span class="chip">TestNG</span><span class="chip">JUnit</span><span class="chip">Maven</span><span class="chip">SQL</span></div></div>
+        <div class="card sblock reveal"><h3><span class="dot"></span>Platforms, Tools &amp; Delivery</h3><div class="chips">
+          <span class="chip">SAP C4C</span><span class="chip">Salesforce</span><span class="chip">SAP Commerce (Hybris)</span><span class="chip">Jira</span><span class="chip">qTest</span><span class="chip">Confluence</span><span class="chip">Jenkins</span><span class="chip">Bamboo</span><span class="chip">Git / GitHub</span><span class="chip">Agile / Scrum</span></div></div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications">
+      <div class="eyebrow">Certifications</div>
+      <h2>Certified in <span class="serif">test automation</span></h2>
+      <div class="certs">
+        <div class="card cert reveal"><div class="code">AS1</div><b>Automation Specialist Level 1</b><span>Tricentis Tosca</span></div>
+        <div class="card cert reveal"><div class="code">AS2</div><b>Automation Specialist Level 2</b><span>Tricentis Tosca</span></div>
+        <div class="card cert reveal"><div class="code">AE1</div><b>Automation Engineer Level 1</b><span>Tricentis Tosca</span></div>
+        <div class="card cert reveal"><div class="code">TDS1</div><b>Test Design Specialist Level 1</b><span>Tricentis Tosca</span></div>
+        <div class="card cert reveal"><div class="code">TDS2</div><b>Test Design Specialist Level 2</b><span>Tricentis Tosca</span></div>
+        <div class="card cert reveal"><div class="code">TQL</div><b>Tosca Query Language</b><span>Tricentis Tosca</span></div>
+        <div class="card cert reveal"><div class="code">ETS</div><b>Exploratory Testing Specialist</b><span>Tricentis</span></div>
+        <div class="card cert reveal"><div class="code">SAP</div><b>Certified Automation Specialist for SAP</b><span>SAP Automation</span></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="card contact reveal">
+        <div class="eyebrow" style="justify-content:center">Contact</div>
+        <h2>Let's talk about <span class="serif">AI quality</span></h2>
+        <p>Open to AI QA Lead, GenAI QA Lead, AI Test Lead and AI Quality Engineering Lead roles. Happy to chat about testing LLM, RAG and agentic AI applications.</p>
+        <div class="contact-grid">
+          <a class="cbox" href="mailto:Thota.shiva92@gmail.com"><svg><use href="#i-mail"/></svg><div style="min-width:0"><small>Email</small><span>Thota.shiva92@gmail.com</span></div></a>
+          <a class="cbox" href="tel:+16034179567"><svg><use href="#i-phone"/></svg><div style="min-width:0"><small>Phone</small><span>+1 (603) 417-9567</span></div></a>
+          <a class="cbox" href="https://www.linkedin.com/in/shivakumar-thota-098516159/" target="_blank" rel="noopener"><svg><use href="#i-in"/></svg><div style="min-width:0"><small>LinkedIn</small><span>shivakumar-thota</span></div></a>
+        </div>
+        <div class="cta" style="justify-content:center">
+          <a class="btn btn-primary" href="Shivakumar_Thota_AI_QA_Lead_Resume.pdf" download><svg><use href="#i-down"/></svg> Download Resume</a>
+          <a class="btn btn-ghost" href="mailto:Thota.shiva92@gmail.com"><svg><use href="#i-mail"/></svg> Send an Email</a>
+        </div>
+      </div>
+      <footer>
+        <span>© <span id="yr">2026</span> Shivakumar Thota · Atlanta, GA</span>
+        <span class="mono">AI QA Lead · GenAI · LLM · RAG · Agentic AI</span>
+      </footer>
+    </section>
+  </main>
+</div>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  /* theme toggle */
+  var root = document.documentElement;
+  function setIcon(){
+    var light = root.getAttribute('data-theme') === 'light';
+    document.querySelectorAll('.theme-toggle use').forEach(function(u){ u.setAttribute('href', light ? '#i-moon' : '#i-sun'); });
+  }
+  setIcon();
+  document.querySelectorAll('.theme-toggle').forEach(function(b){
+    b.addEventListener('click', function(){
+      var next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      root.setAttribute('data-theme', next);
+      try{ localStorage.setItem('st-theme', next); }catch(e){}
+      setIcon();
+    });
+  });
+
+  /* mobile menu */
+  var mb = document.getElementById('menuBtn'), mn = document.getElementById('mnav');
+  mb.addEventListener('click', function(){ var o = mn.classList.toggle('open'); mb.setAttribute('aria-expanded', o); });
+  mn.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ mn.classList.remove('open'); mb.setAttribute('aria-expanded', false); }); });
+
+  /* typed roles */
+  var el = document.querySelector('.typed');
+  if (el && !reduce){
+    var roles = el.dataset.roles.split('|'), ri = 0, ci = roles[0].length, del = true;
+    setTimeout(function tick(){
+      var r = roles[ri];
+      if (del){ ci--; if (ci <= 0){ del = false; ri = (ri + 1) % roles.length; } }
+      else { ci++; if (ci >= roles[ri].length){ del = true; el.textContent = roles[ri]; return setTimeout(tick, 2200); } }
+      el.textContent = roles[ri].slice(0, Math.max(ci,0)) || ' ';
+      setTimeout(tick, del ? 35 : 70);
+    }, 2200);
+  }
+
+  /* console lines */
+  var lines = document.querySelectorAll('#console .ln');
+  function playConsole(){
+    if (reduce){ lines.forEach(function(l){ l.classList.add('on'); }); return; }
+    lines.forEach(function(l, i){ setTimeout(function(){ l.classList.add('on'); }, 350 + i * 330); });
+  }
+
+  /* counters */
+  function count(n){
+    var target = +n.dataset.count, suffix = n.querySelector('em') ? n.querySelector('em').outerHTML : '';
+    if (reduce) return;
+    var s = null;
+    function step(t){ if(!s) s = t; var p = Math.min((t - s) / 1100, 1); n.innerHTML = Math.round(target * (1 - Math.pow(1 - p, 3))) + suffix; if (p < 1) requestAnimationFrame(step); }
+    requestAnimationFrame(step);
+  }
+
+  /* reveal on scroll */
+  var played = false;
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (!e.isIntersecting) return;
+        e.target.classList.add('in');
+        if (e.target.classList.contains('console') && !played){ played = true; playConsole(); }
+        var c = e.target.querySelector('[data-count]'); if (c) count(c);
+        io.unobserve(e.target);
+      });
+    }, { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(function(r){ io.observe(r); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(r){ r.classList.add('in'); });
+    playConsole();
+  }
+
+  /* scrollspy */
+  var links = document.querySelectorAll('.side-nav a');
+  var secs = Array.prototype.map.call(links, function(a){ return document.querySelector(a.getAttribute('href')); });
+  function spy(){
+    var y = window.scrollY + window.innerHeight * .35, idx = 0;
+    secs.forEach(function(s, i){ if (s && s.offsetTop <= y) idx = i; });
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) idx = secs.length - 1;
+    links.forEach(function(l, i){ l.classList.toggle('active', i === idx); });
+  }
+  window.addEventListener('scroll', spy, { passive: true }); spy();
+
+  /* tabs */
+  var tabs = document.querySelectorAll('.tab');
+  tabs.forEach(function(t, i){
+    t.addEventListener('click', function(){ select(i); });
+    t.addEventListener('keydown', function(e){
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft'){
+        var n = (i + (e.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length; select(n); tabs[n].focus();
+      }
+    });
+  });
+  function select(i){
+    tabs.forEach(function(t, j){
+      t.setAttribute('aria-selected', i === j);
+      t.tabIndex = i === j ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = i !== j;
+    });
+  }
+  select(0);
+})();
+</script>
+</body>
+</html>
